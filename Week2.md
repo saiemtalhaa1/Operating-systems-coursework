@@ -1,136 +1,86 @@
-# Week 2 – Security Configuration & Remote Administration
 
-## Introduction
-In Week 2, the focus was on **securing the Linux server** and setting up **safe remote administration**.  
-Instead of working directly on the virtual machine console every time, Secure Shell (SSH) was used to manage the server remotely in a controlled and encrypted way.
-
-This week is important because **remote access is powerful but risky** if not configured correctly.
+This flow ensures that remote access only occurs after required system services are active.
 
 ---
 
-## Week 2 Objectives
-The main goals for this week were:
+## 5. Secure Shell (SSH) Configuration
 
-- Enable remote access using SSH
-- Confirm the SSH service is running correctly
-- Identify the server’s network configuration
-- Understand basic security risks related to remote administration
-- Prepare the system for further security hardening in later weeks
+Secure Shell (SSH) was selected as the remote administration method because it provides encrypted communication between systems.
 
----
-
-## Why Remote Administration Is Needed
-Managing a server locally is not practical in real systems.  
-Remote administration allows administrators to:
-
-- Manage servers without physical access
-- Perform updates and maintenance efficiently
-- Monitor system health from another machine
-
-However, remote access must be **secured properly** to avoid unauthorized access.
-
----
-
-## What Is SSH?
-SSH (Secure Shell) is a protocol that allows encrypted communication between a client and a server.
-
-Server boots
-   ↓
-SSH service starts
-   ↓
-Network interface gets IP address
-   ↓
-SSH listens on port 22
-   ↓
-Remote client connects securely
-
-### Key benefits of SSH:
-- Encrypted data transfer
-- Secure authentication
-- Protection against eavesdropping
-- Widely used in real-world Linux systems
-
-Because of these benefits, SSH was chosen as the **only remote access method**.
-
----
-
-## SSH Service Configuration
-The SSH service was checked to ensure it was:
-
-- Installed
-- Running
-- Enabled at system startup
+### Key actions performed:
+- Verified SSH service installation
+- Checked service status
+- Confirmed SSH starts automatically on boot
 
 ### Commands used:
 - `sudo systemctl status ssh`
 - `ip a`
 
-These commands confirmed that:
-- The SSH daemon was active
-- The server was listening on the default SSH port
-- The network interface was correctly configured
+These commands confirmed:
+- SSH service was **active and running**
+- The server had a valid network interface
+- The system was ready for remote access
 
 ---
 
-## Network Configuration Check
-Understanding the network configuration is essential for secure remote access.
+## 6. Network Configuration Verification
 
-The following information was verified:
-- Network interface name
-- Assigned IP address
-- Network status (UP/DOWN)
+The server’s network configuration was reviewed to ensure proper connectivity.
 
-This ensured that the server could communicate reliably with the workstation.
+### Information verified:
+- Active network interface
+- Assigned IPv4 address
+- Interface operational state (UP)
 
----
-
-## Basic Security Review
-Remote administration introduces several risks if left unmanaged.
-
-### Identified risks and observations:
-
-| Risk | Description | Status |
-|----|-----------|-------|
-| Brute-force login attempts | Repeated password guessing | Identified |
-| Unauthorized access | Weak authentication | Reviewed |
-| Service exposure | Open services on the network | Limited |
-| Data interception | Unencrypted connections | Prevented by SSH |
-
-These risks were documented and will be **further mitigated in later weeks**.
+This step is critical because SSH cannot function without proper network connectivity.
 
 ---
 
-## Secure vs Insecure Remote Access (Comparison)
+## 7. Security Risk Identification
 
-| Feature | Secure SSH | Insecure Access |
-|------|-----------|----------------|
+Remote access introduces potential security threats.  
+The table below outlines key risks identified during this week.
+
+| Risk Type | Description | Potential Impact |
+|---------|------------|------------------|
+| Brute-force attacks | Repeated login attempts | Account compromise |
+| Weak credentials | Simple passwords | Unauthorized access |
+| Open services | Exposed ports | Larger attack surface |
+
+These risks were documented and planned to be mitigated in later weeks.
+
+---
+
+## 8. Secure vs Insecure Access Comparison
+
+| Feature | Secure SSH Access | Insecure Access |
+|------|------------------|----------------|
 | Encryption | Yes | No |
-| Authentication required | Yes | Often no |
-| Data visibility | Encrypted | Plain text |
-| Industry standard | Yes | No |
+| Authentication | Required | Optional or none |
+| Data protection | Encrypted traffic | Plain text |
+| Security level | High | Low |
 
-This comparison highlights why SSH is the correct and professional choice.
-
----
-
-## Checklist – Week 2 Tasks Completed
-✔ SSH service verified  
-✔ Network interface checked  
-✔ Remote access confirmed  
-✔ Security risks identified  
-✔ Preparation for hardening completed  
+This comparison highlights why SSH is the industry-standard choice for remote administration.
 
 ---
 
-## Reflection
-This week helped me understand that **security is not only about tools, but also about configuration**.  
-I learned how to verify running services, interpret network information, and recognise risks related to remote access.
+## 9. Key Learning Outcomes
 
-The work completed in Week 2 provides a strong foundation for:
-- Firewall configuration
-- Authentication hardening
-- System auditing in later weeks
+By completing this week, the following skills were developed:
+
+- Understanding how SSH works
+- Interpreting system service status outputs
+- Reading network configuration information
+- Identifying security risks in server environments
+- Applying security-aware system administration practices
 
 ---
 
+## 10. Reflection
+Week 2 highlighted that remote access is not only about convenience but also about responsibility.  
+While SSH enables efficient system management, it also introduces security risks that must be carefully controlled. This week built a strong foundation for upcoming tasks involving firewall rules, access control, and system hardening.
+
+---
+
+### 🔗 Navigation
 [Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 3](Week3.md)
