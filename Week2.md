@@ -1,3 +1,57 @@
+# 📘 Week 2 – Security Configuration & Remote Administration
+
+---
+
+## 1. Introduction
+In Week 2, the focus was on securing the Linux server and enabling safe remote administration.  
+Instead of managing the server only through the local console, secure remote access was configured to allow efficient and professional system management.
+
+This week introduced the importance of balancing **accessibility** and **security** when administering servers.
+
+---
+
+## 2. Objectives for This Week
+The main objectives of Week 2 were:
+
+- Enable secure remote administration
+- Verify SSH service availability
+- Confirm correct network configuration
+- Understand security risks related to remote access
+- Prepare the system for future security hardening
+
+---
+
+## 3. Remote Administration Overview
+
+### Why Remote Administration Is Needed
+Remote administration allows system administrators to manage servers without physical access.
+
+**Advantages:**
+- Faster system management
+- Reduced downtime
+- Real-world server administration practice
+
+**Potential Risks:**
+- Unauthorized login attempts
+- Brute-force password attacks
+- Network exposure
+
+Because of these risks, strong security controls are essential.
+
+---
+
+## 4. SSH Configuration Workflow
+
+Server boots
+↓
+SSH service starts
+↓
+Network interface receives IP address
+↓
+SSH listens on port 22
+↓
+Remote client connects securely
+
 
 This flow ensures that remote access only occurs after required system services are active.
 
@@ -84,3 +138,7 @@ While SSH enables efficient system management, it also introduces security risks
 
 ### 🔗 Navigation
 [Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 3](Week3.md)
+
+
+The logical workflow followed during SSH setup is shown below:
+
