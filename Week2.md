@@ -34,6 +34,16 @@ However, remote access must be **secured properly** to avoid unauthorized access
 ## What Is SSH?
 SSH (Secure Shell) is a protocol that allows encrypted communication between a client and a server.
 
+Server boots
+   ↓
+SSH service starts
+   ↓
+Network interface gets IP address
+   ↓
+SSH listens on port 22
+   ↓
+Remote client connects securely
+
 ### Key benefits of SSH:
 - Encrypted data transfer
 - Secure authentication
