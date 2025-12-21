@@ -1,74 +1,126 @@
 # Week 2 – Security Configuration & Remote Administration
 
 ## Introduction
-This week focused on securing the Linux server and enabling safe remote administration.  
-The main objective was to configure Secure Shell (SSH) correctly, reduce attack surfaces, and apply basic system hardening techniques while maintaining usability for administrative tasks.
+In Week 2, the focus was on **securing the Linux server** and setting up **safe remote administration**.  
+Instead of working directly on the virtual machine console every time, Secure Shell (SSH) was used to manage the server remotely in a controlled and encrypted way.
+
+This week is important because **remote access is powerful but risky** if not configured correctly.
 
 ---
 
-## Objectives
-- Enable secure remote access using SSH
-- Verify SSH service status and network availability
-- Apply basic security hardening practices
-- Understand risks associated with remote administration
+## Week 2 Objectives
+The main goals for this week were:
+
+- Enable remote access using SSH
+- Confirm the SSH service is running correctly
+- Identify the server’s network configuration
+- Understand basic security risks related to remote administration
+- Prepare the system for further security hardening in later weeks
 
 ---
 
-## SSH Configuration Overview
-Secure Shell (SSH) was used as the primary method for remote administration. SSH provides encrypted communication between client and server, protecting credentials and session data from interception.
+## Why Remote Administration Is Needed
+Managing a server locally is not practical in real systems.  
+Remote administration allows administrators to:
 
-### Key configuration goals:
-- Ensure SSH service is running and enabled at boot
-- Confirm correct network interface configuration
-- Verify server accessibility using IP addressing
+- Manage servers without physical access
+- Perform updates and maintenance efficiently
+- Monitor system health from another machine
+
+However, remote access must be **secured properly** to avoid unauthorized access.
 
 ---
 
-## SSH Service Verification
-The SSH service status was checked using system management tools to confirm that the service was active and listening for incoming connections.
+## What Is SSH?
+SSH (Secure Shell) is a protocol that allows encrypted communication between a client and a server.
+
+### Key benefits of SSH:
+- Encrypted data transfer
+- Secure authentication
+- Protection against eavesdropping
+- Widely used in real-world Linux systems
+
+Because of these benefits, SSH was chosen as the **only remote access method**.
+
+---
+
+## SSH Service Configuration
+The SSH service was checked to ensure it was:
+
+- Installed
+- Running
+- Enabled at system startup
 
 ### Commands used:
 - `sudo systemctl status ssh`
 - `ip a`
 
-These commands confirmed:
-- SSH daemon was running
-- The server had a valid IP address assigned
-- Port 22 was open and listening
+These commands confirmed that:
+- The SSH daemon was active
+- The server was listening on the default SSH port
+- The network interface was correctly configured
 
 ---
 
-## Security Considerations
-Remote access introduces security risks if not properly configured. The following considerations were reviewed:
+## Network Configuration Check
+Understanding the network configuration is essential for secure remote access.
 
-| Risk | Description | Mitigation |
-|----|----|----|
-| Brute-force attacks | Automated login attempts | Strong passwords, later hardening |
-| Unauthorized access | Weak authentication | Limited user access |
-| Network exposure | Open services | Minimal services enabled |
+The following information was verified:
+- Network interface name
+- Assigned IP address
+- Network status (UP/DOWN)
 
-These risks were noted for further mitigation in later weeks.
+This ensured that the server could communicate reliably with the workstation.
 
 ---
 
-## Comparison: Secure vs Insecure Remote Access
+## Basic Security Review
+Remote administration introduces several risks if left unmanaged.
+
+### Identified risks and observations:
+
+| Risk | Description | Status |
+|----|-----------|-------|
+| Brute-force login attempts | Repeated password guessing | Identified |
+| Unauthorized access | Weak authentication | Reviewed |
+| Service exposure | Open services on the network | Limited |
+| Data interception | Unencrypted connections | Prevented by SSH |
+
+These risks were documented and will be **further mitigated in later weeks**.
+
+---
+
+## Secure vs Insecure Remote Access (Comparison)
 
 | Feature | Secure SSH | Insecure Access |
 |------|-----------|----------------|
 | Encryption | Yes | No |
-| Authentication | Required | Often none |
-| Data protection | Encrypted traffic | Plain text |
-| Administrative control | Auditable | Uncontrolled |
+| Authentication required | Yes | Often no |
+| Data visibility | Encrypted | Plain text |
+| Industry standard | Yes | No |
 
-This comparison highlights why SSH is the preferred method for system administration.
+This comparison highlights why SSH is the correct and professional choice.
+
+---
+
+## Checklist – Week 2 Tasks Completed
+✔ SSH service verified  
+✔ Network interface checked  
+✔ Remote access confirmed  
+✔ Security risks identified  
+✔ Preparation for hardening completed  
 
 ---
 
 ## Reflection
-This week improved my understanding of Linux security fundamentals and the importance of controlled remote access.  
-I learned how to verify running services, interpret network configuration output, and evaluate security risks associated with remote administration. These skills form a foundation for more advanced hardening techniques in later weeks.
+This week helped me understand that **security is not only about tools, but also about configuration**.  
+I learned how to verify running services, interpret network information, and recognise risks related to remote access.
+
+The work completed in Week 2 provides a strong foundation for:
+- Firewall configuration
+- Authentication hardening
+- System auditing in later weeks
 
 ---
 
 [Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 3](Week3.md)
-
