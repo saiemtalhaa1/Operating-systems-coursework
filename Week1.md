@@ -140,4 +140,5 @@ Using a minimal Ubuntu Server environment reinforced key Linux administration co
 
 ---
 
-[Back to Index](../INDEX.md)
+### 🔗 Navigation
+[Back to Index](INDEX.md) | [Week 2](Week2.md)
