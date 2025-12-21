@@ -51,124 +51,6 @@ UFW was selected due to its simplicity, reliability, and integration with Ubuntu
 
 The following workflow was used to configure firewall rules:
 
-# 🔐 Week 4 – Network Services & Firewall Configuration
-
----
-
-## 1. Introduction
-Week 4 focused on implementing **network security controls** to protect the Linux server from unauthorised access.  
-While earlier weeks concentrated on planning and basic configuration, this week introduced **active security enforcement** through firewall rules and controlled service exposure.
-
-The main goal was to ensure that only **essential services** were accessible and that all other traffic was restricted by default.
-
----
-
-## 2. Objectives for This Week
-The objectives of Week 4 were:
-
-- Identify essential network services running on the server
-- Configure a firewall using UFW (Uncomplicated Firewall)
-- Restrict network access to required services only
-- Reduce the system’s attack surface
-- Verify firewall rules and behaviour
-
----
-
-## 3. Network Services Overview
-
-A network service is any application that listens for incoming network connections.  
-Unnecessary services increase security risks and should be disabled or blocked.
-
-### Services reviewed on the server:
-- **SSH (port 22)** – required for remote administration
-- No additional public services enabled
-
-By limiting exposed services, the system becomes easier to secure and monitor.
-
----
-
-## 4. Firewall Concept and Purpose
-
-A firewall acts as a **traffic control mechanism**, deciding which network packets are allowed or blocked.
-
-### Key firewall principles applied:
-- **Default deny policy** – block everything unless explicitly allowed
-- **Least privilege** – allow only what is necessary
-- **Controlled access** – restrict services to trusted connections
-
-UFW was selected due to its simplicity, reliability, and integration with Ubuntu.
-
----
-
-## 5. Firewall Configuration Workflow
-
-The following workflow was used to configure firewall rules:
-
-Perfect 👍
-Since you used ufw, we can write Week 4 properly, academically, and strongly.
-This will be one of the most important weeks for marks, and I’ll do it better than your friend’s, but still simple and human.
-
-Below is the FULL, FINAL, READY-TO-PASTE Markdown code for Week4.md.
-
-👉 You will copy everything, paste into Week4.md, then commit.
-📸 Screenshots come after, not now.
-
-✅ FINAL – WEEK 4 (HIGH-QUALITY VERSION)
-# 🔐 Week 4 – Network Services & Firewall Configuration
-
----
-
-## 1. Introduction
-Week 4 focused on implementing **network security controls** to protect the Linux server from unauthorised access.  
-While earlier weeks concentrated on planning and basic configuration, this week introduced **active security enforcement** through firewall rules and controlled service exposure.
-
-The main goal was to ensure that only **essential services** were accessible and that all other traffic was restricted by default.
-
----
-
-## 2. Objectives for This Week
-The objectives of Week 4 were:
-
-- Identify essential network services running on the server
-- Configure a firewall using UFW (Uncomplicated Firewall)
-- Restrict network access to required services only
-- Reduce the system’s attack surface
-- Verify firewall rules and behaviour
-
----
-
-## 3. Network Services Overview
-
-A network service is any application that listens for incoming network connections.  
-Unnecessary services increase security risks and should be disabled or blocked.
-
-### Services reviewed on the server:
-- **SSH (port 22)** – required for remote administration
-- No additional public services enabled
-
-By limiting exposed services, the system becomes easier to secure and monitor.
-
----
-
-## 4. Firewall Concept and Purpose
-
-A firewall acts as a **traffic control mechanism**, deciding which network packets are allowed or blocked.
-
-### Key firewall principles applied:
-- **Default deny policy** – block everything unless explicitly allowed
-- **Least privilege** – allow only what is necessary
-- **Controlled access** – restrict services to trusted connections
-
-UFW was selected due to its simplicity, reliability, and integration with Ubuntu.
-
----
-
-## 5. Firewall Configuration Workflow
-
-The following workflow was used to configure firewall rules:
-
-
-
 Identify required services
 ↓
 Enable firewall
@@ -178,6 +60,7 @@ Allow SSH traffic
 Block all other incoming connections
 ↓
 Verify firewall status and rules
+
 
 
 This structured process ensures that security rules are applied logically and safely.
@@ -251,3 +134,4 @@ This week reinforced the importance of **defence in depth**, where firewalls act
 
 ### 🔗 Navigation
 [Back to Index](INDEX.md) | [Week 3](Week3.md) | [Week 5](Week5.md)
+
