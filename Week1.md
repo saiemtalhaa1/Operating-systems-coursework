@@ -69,6 +69,16 @@ following reasons:
 
 ---
 
+### Virtual Machine Creation
+
+![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
+
+This screenshot shows the successful creation of the Ubuntu Server virtual
+machine using Oracle VirtualBox, including allocated memory, CPU, and storage
+configuration.
+
+---
+
 ## Distribution Comparison Table
 
 | Distribution | Stability | Documentation | VirtualBox Support | Decision |
@@ -126,18 +136,6 @@ Key checks included:
 
 These checks ensured that the server could be securely accessed and managed in
 later weeks.
-
----
-
-## Evidence & Screenshots
-
-### Virtual Machine Creation
-
-![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
-
-This screenshot shows the successful creation of the Ubuntu Server virtual
-machine using Oracle VirtualBox, including allocated memory, CPU, and storage
-configuration.
 
 ---
 
