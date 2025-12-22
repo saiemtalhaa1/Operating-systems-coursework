@@ -1,184 +1,148 @@
 # 📊 Week 3 – Performance Testing & Monitoring
-
 ---
 
 ## 1. Introduction
-Week 3 focused on understanding how a Linux system behaves under different workloads.  
-Instead of only configuring services, this week analysed **system performance** by generating controlled stress on CPU, memory, disk, and network resources.
 
-Performance testing is essential to identify system limits, bottlenecks, and stability before deploying real services.
+Week 3 focused on analysing how the Linux server behaves during normal operation by observing system performance in real time.  
+Rather than changing configurations, this week concentrated on **monitoring**, **process analysis**, and **resource usage evaluation**.
+
+Understanding performance behaviour is essential for identifying bottlenecks and ensuring long-term system stability.
 
 ---
 
-## 2. Objectives for This Week
-The main objectives of Week 3 were:
+## 2. Objectives
 
-- Understand system resource usage
-- Perform basic performance testing
-- Monitor CPU, memory, disk, and network activity
-- Analyse how workloads affect system behaviour
+The objectives of this week were:
+
+- Monitor CPU and memory usage
+- Observe active system processes
+- Analyse system load and stability
+- Understand how Linux reports performance metrics
 - Prepare the system for optimisation and tuning
 
 ---
 
-## 3. Performance Testing Overview
+## 3. Performance Monitoring Overview
 
-Performance testing helps answer questions such as:
-- How much load can the system handle?
-- Which resource becomes a bottleneck first?
-- How does the system respond under stress?
+Performance monitoring allows administrators to:
 
-### Key Performance Areas Tested:
-- CPU performance
-- Memory usage
-- Disk I/O activity
-- Network throughput
+- Identify resource-intensive processes
+- Detect abnormal system behaviour
+- Verify system stability
+- Make informed optimisation decisions
 
----
-
-## 4. Performance Testing Workflow
-
-The following workflow was followed during testing:
-
-Select test tool
-↓
-Generate workload
-↓
-Monitor system resources
-↓
-Observe performance impact
-↓
-Analyse results
-
-
-This structured approach ensures controlled and meaningful performance testing.
-
----
-
-## 5. CPU Performance Testing
-
-### Purpose
-CPU testing measures how well the processor handles intensive computation.
-
-### Actions Performed:
-- Generated CPU-intensive workloads
-- Observed CPU usage during execution
-- Monitored process behaviour
-
-### Key Metrics Observed:
-- CPU utilisation percentage
-- Process execution time
+Key system components monitored:
+- CPU
+- Memory
+- Active processes
 - Load average
 
 ---
 
-## 6. Memory Performance Testing
+## 4. Process Analysis Using `ps`
 
 ### Purpose
-Memory testing evaluates how the system handles RAM allocation and usage.
+The `ps aux` command was used to display all running processes on the system.  
+This provides a detailed snapshot of system activity, including background services and user-level processes.
 
-### Actions Performed:
-- Created memory stress conditions
-- Observed memory consumption
-- Checked swap behaviour (if applicable)
+![Process List Output](Screenshots/Week3/week3_1.png)
 
-### Metrics Observed:
-- Used vs free memory
-- Memory pressure
-- Stability under load
+The screenshot shows multiple system services running under the root user, confirming that essential background processes are active and stable.
 
 ---
 
-## 7. Disk I/O Performance Testing
+## 5. Real-Time Monitoring Using `top`
 
 ### Purpose
-Disk testing identifies how fast the system can read and write data.
+The `top` command provides a live view of system performance and updates continuously.
 
-### Actions Performed:
-- Generated disk read/write operations
-- Observed disk throughput
-- Monitored I/O wait times
-
-### Why Disk I/O Matters:
-- Slow disks affect application performance
-- High I/O wait increases response times
-- Critical for databases and servers
-
----
-
-## 8. Network Performance Testing
-
-### Purpose
-Network testing measures data transfer speed and stability.
-
-### Actions Performed:
-- Tested network throughput
-- Observed latency and bandwidth usage
-- Verified reliable communication between systems
-
----
-
-## 9. Monitoring Strategy
-
-To understand performance impact, multiple monitoring tools were used.
-
-### Monitoring Focus Areas:
-- CPU load
+It displays:
+- CPU utilisation
 - Memory usage
-- Disk activity
-- Network traffic
+- Load average
+- Running and sleeping processes
 
-### Why Monitoring Is Important:
-- Helps detect bottlenecks
-- Prevents system overload
-- Improves troubleshooting accuracy
+![Top Command Output](Screenshots/Week3/week3_2.png)
 
----
-
-## 10. Performance Test Summary Table
-
-| Resource | Test Purpose | Observed Behaviour |
-|-------|-------------|-------------------|
-| CPU | Stress processing power | CPU usage increased during load |
-| Memory | Test RAM allocation | Memory usage rose as expected |
-| Disk | Measure read/write speed | Disk activity increased under I/O |
-| Network | Test throughput | Stable data transfer observed |
+This screenshot demonstrates real-time monitoring of system activity, showing low CPU usage and stable memory consumption during normal operation.
 
 ---
 
-## 11. Performance vs Stability Comparison
+## 6. Enhanced Monitoring Using `htop`
 
-| Aspect | Low Load | High Load |
-|-----|--------|----------|
-| CPU usage | Low | High |
-| Memory usage | Stable | Increased |
-| System response | Fast | Slight delay |
-| Stability | Normal | Maintained |
+### Purpose
+`htop` was used as an enhanced alternative to `top` for clearer performance visualisation.
 
-This comparison shows that the system remained stable even under increased load.
+Advantages of `htop` include:
+- Colour-coded resource usage
+- Visual CPU and memory bars
+- Easier process navigation
+
+![htop Monitoring](Screenshots/Week3/week3_3.png)
+
+The screenshot clearly visualises CPU and memory usage, making system performance easier to interpret.
 
 ---
 
-## 12. Key Learning Outcomes
+## 7. Monitoring Workflow
+
+The following workflow was followed during monitoring:
+
+1. Boot the server normally  
+2. Observe baseline activity  
+3. Run monitoring tools (`ps`, `top`, `htop`)  
+4. Analyse CPU and memory usage  
+5. Confirm system stability  
+
+This structured approach ensured consistent and meaningful observations.
+
+---
+
+## 8. Performance Observation Summary
+
+| Resource | Observation |
+|--------|------------|
+| CPU | Mostly idle during normal use |
+| Memory | Stable with sufficient free RAM |
+| Processes | Mainly system services |
+| Load Average | Low and consistent |
+
+The results confirm that the system operates efficiently under standard conditions.
+
+---
+
+## 9. System Stability Analysis
+
+During monitoring:
+- No CPU spikes were detected
+- Memory usage remained controlled
+- No system lag or instability occurred
+- Background services functioned normally
+
+This indicates that the system is stable and ready for further configuration and testing.
+
+---
+
+## 10. Key Learning Outcomes
 
 By the end of Week 3, the following skills were developed:
 
-- Understanding performance metrics
-- Generating controlled system workloads
-- Monitoring live system behaviour
-- Identifying performance bottlenecks
-- Analysing system stability under stress
+- Monitoring live system performance
+- Interpreting CPU and memory statistics
+- Analysing running processes
+- Understanding system stability indicators
+- Applying performance-aware administration practices
 
 ---
 
-## 13. Reflection
-Week 3 demonstrated how system performance directly impacts reliability and user experience.  
-Performance testing provided valuable insight into how different system components interact under load. This knowledge will be essential for future optimisation, monitoring, and security hardening tasks.
+## 11. Reflection
+
+Week 3 demonstrated the importance of continuous performance monitoring.  
+Even without heavy workloads, monitoring tools provide valuable insight into system health and behaviour.
+
+These skills will be essential for later tasks involving optimisation, logging, and system hardening.
 
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md) |
-
-
-
+[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md)
