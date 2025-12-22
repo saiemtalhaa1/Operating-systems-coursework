@@ -209,4 +209,4 @@ This week highlighted the importance of **proactive performance analysis** in ma
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week `](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) Week 6 | [Week 7](Week7.md) 
+[Back to Index](INDEX.md) | [Week `](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | Week 6 | [Week 7](Week7.md) 
