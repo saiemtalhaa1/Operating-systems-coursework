@@ -1,148 +1,138 @@
 # 📊 Week 3 – Performance Testing & Monitoring
+
 ---
 
 ## 1. Introduction
 
-Week 3 focused on analysing how the Linux server behaves during normal operation by observing system performance in real time.  
-Rather than changing configurations, this week concentrated on **monitoring**, **process analysis**, and **resource usage evaluation**.
+Week 3 focused on analysing how the Linux server behaves under different workloads.  
+Instead of only configuring services, this week explored **system performance** by monitoring CPU, memory, and running processes in real time.
 
-Understanding performance behaviour is essential for identifying bottlenecks and ensuring long-term system stability.
+Performance testing is essential to identify system limits, detect bottlenecks, and ensure stability before deploying real services.
 
 ---
 
-## 2. Objectives
+## 2. Objectives for This Week
 
-The objectives of this week were:
+The objectives of Week 3 were:
 
-- Monitor CPU and memory usage
-- Observe active system processes
-- Analyse system load and stability
-- Understand how Linux reports performance metrics
+- Monitor real-time system performance
+- Understand CPU and memory usage
+- Observe running processes
+- Analyse system behaviour under normal load
 - Prepare the system for optimisation and tuning
 
 ---
 
 ## 3. Performance Monitoring Overview
 
-Performance monitoring allows administrators to:
+System monitoring helps administrators answer key questions:
 
-- Identify resource-intensive processes
-- Detect abnormal system behaviour
-- Verify system stability
-- Make informed optimisation decisions
+- Is the system under heavy load?
+- Which processes consume the most resources?
+- Is the system stable during normal operation?
 
-Key system components monitored:
-- CPU
-- Memory
-- Active processes
-- Load average
+Linux provides several built-in tools to analyse system performance without additional software.
 
 ---
 
-## 4. Process Analysis Using `ps`
+## 4. Process Monitoring Using `ps`
 
 ### Purpose
-The `ps aux` command was used to display all running processes on the system.  
-This provides a detailed snapshot of system activity, including background services and user-level processes.
 
-![Process List Output](Screenshots/Week3/week3_1.png)
+The `ps` command was used to list running processes and understand how system resources are allocated.
 
-The screenshot shows multiple system services running under the root user, confirming that essential background processes are active and stable.
+### Screenshot: Process List Output
+
+![Process List Output](Screenshots/Week3/week_3_1.png)
+
+This screenshot shows the output of the `ps aux` command, listing active processes along with CPU and memory usage.  
+It highlights background system services and user-level processes.
 
 ---
 
-## 5. Real-Time Monitoring Using `top`
+## 5. Real-Time System Monitoring Using `top`
 
 ### Purpose
-The `top` command provides a live view of system performance and updates continuously.
+
+The `top` command provides a continuously updating view of system performance.
 
 It displays:
 - CPU utilisation
 - Memory usage
 - Load average
-- Running and sleeping processes
+- Active and sleeping processes
 
-![Top Command Output](Screenshots/Week3/week3_2.png)
+### Screenshot: `top` Command Output
 
-This screenshot demonstrates real-time monitoring of system activity, showing low CPU usage and stable memory consumption during normal operation.
+![Top Command Output](Screenshots/Week3/week_3_2.png)
+
+This screenshot demonstrates real-time monitoring of CPU and memory usage.  
+The low load average confirms that the system is operating efficiently under normal conditions.
 
 ---
 
 ## 6. Enhanced Monitoring Using `htop`
 
 ### Purpose
-`htop` was used as an enhanced alternative to `top` for clearer performance visualisation.
 
-Advantages of `htop` include:
+`htop` was used as an advanced alternative to `top` to provide a clearer visual representation of system performance.
+
+### Advantages of `htop`:
 - Colour-coded resource usage
 - Visual CPU and memory bars
-- Easier process navigation
+- Improved readability of running processes
 
-![htop Monitoring](Screenshots/Week3/week3_3.png)
+### Screenshot: `htop` Interface
 
-The screenshot clearly visualises CPU and memory usage, making system performance easier to interpret.
+![Htop Monitoring](Screenshots/Week3/week_3_3.png)
 
----
-
-## 7. Monitoring Workflow
-
-The following workflow was followed during monitoring:
-
-1. Boot the server normally  
-2. Observe baseline activity  
-3. Run monitoring tools (`ps`, `top`, `htop`)  
-4. Analyse CPU and memory usage  
-5. Confirm system stability  
-
-This structured approach ensured consistent and meaningful observations.
+This screenshot shows the `htop` interface, clearly displaying CPU cores, memory usage, and active processes.
 
 ---
 
-## 8. Performance Observation Summary
+## 7. Performance Observation Summary
+
+During monitoring, the following observations were made:
+
+- CPU usage remained low during idle operation
+- Memory usage was stable and predictable
+- No abnormal or runaway processes were detected
+- System responsiveness remained smooth
+
+---
+
+## 8. Performance Summary Table
 
 | Resource | Observation |
 |--------|------------|
-| CPU | Mostly idle during normal use |
-| Memory | Stable with sufficient free RAM |
-| Processes | Mainly system services |
-| Load Average | Low and consistent |
-
-The results confirm that the system operates efficiently under standard conditions.
+| CPU | Low utilisation during idle state |
+| Memory | Stable usage with sufficient free RAM |
+| Processes | Normal system services running |
+| System stability | Maintained throughout monitoring |
 
 ---
 
-## 9. System Stability Analysis
+## 9. Key Learning Outcomes
 
-During monitoring:
-- No CPU spikes were detected
-- Memory usage remained controlled
-- No system lag or instability occurred
-- Background services functioned normally
+By completing Week 3, the following skills were developed:
 
-This indicates that the system is stable and ready for further configuration and testing.
-
----
-
-## 10. Key Learning Outcomes
-
-By the end of Week 3, the following skills were developed:
-
-- Monitoring live system performance
-- Interpreting CPU and memory statistics
-- Analysing running processes
-- Understanding system stability indicators
-- Applying performance-aware administration practices
+- Reading and interpreting performance metrics
+- Monitoring live system behaviour
+- Identifying high-resource processes
+- Understanding system load and stability
+- Using multiple monitoring tools effectively
 
 ---
 
-## 11. Reflection
+## 10. Reflection
 
-Week 3 demonstrated the importance of continuous performance monitoring.  
-Even without heavy workloads, monitoring tools provide valuable insight into system health and behaviour.
+Week 3 demonstrated how performance monitoring is a critical part of system administration.  
+Understanding how CPU, memory, and processes interact provides valuable insight into system health and reliability.
 
-These skills will be essential for later tasks involving optimisation, logging, and system hardening.
+These skills will be essential for future tasks involving optimisation, logging, and security hardening.
 
 ---
 
 ### 🔗 Navigation
+
 [Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md)
