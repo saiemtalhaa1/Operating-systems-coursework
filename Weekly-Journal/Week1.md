@@ -71,7 +71,7 @@ following reasons:
 
 ### Virtual Machine Creation
 
-![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
+![VirtualBox VM Created](../Screenshots/Week1/1_vm_created.png)
 
 This screenshot shows the successful creation of the Ubuntu Server virtual
 machine using Oracle VirtualBox, including allocated memory, CPU, and storage
@@ -141,7 +141,7 @@ later weeks.
 
 ### SSH Service Verification
 
-![SSH Service Running](Screenshots/Week1/3_ssh_running.png)
+![SSH Service Running](../Screenshots/Week1/3_ssh_running.png)
 
 This screenshot confirms that the SSH service is active and running on the
 server, enabling secure remote administration without relying on the VirtualBox
