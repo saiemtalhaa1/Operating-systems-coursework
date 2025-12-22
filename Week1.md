@@ -1,4 +1,19 @@
 # Week 1 – System Planning & Distribution Selection
+## Evidence & Screenshots
+
+#### Virtual Machine Creation
+![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
+
+This screenshot shows the successful creation of the Ubuntu server virtual machine
+using Oracle VirtualBox, including allocated memory, CPU, and storage.
+
+---
+
+#### SSH Service Verification
+![SSH Service Running](Screenshots/Week1/2_ssh_service_running.png)
+
+This screenshot confirms that the SSH service is active and running, allowing
+secure remote access to the server.
 
 ---
 
