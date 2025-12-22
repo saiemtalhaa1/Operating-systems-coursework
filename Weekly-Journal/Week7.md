@@ -49,14 +49,14 @@ Lynis was used as the primary auditing tool for evaluating system security.
 - Generate a measurable security score
 
 ### Screenshot: Lynis Installation
-![Lynis Installation](Screenshots/Week7/week7_1_lynis_install.png)
+![Lynis Installation](../Screenshots/Week7/week7_1_lynis_install.png)
 
 This screenshot shows the successful installation of Lynis using the APT package manager.
 
 ---
 
 ### Screenshot: Lynis Scan Summary
-![Lynis Scan Summary](Screenshots/Week7/week7_2_lynis_scan_summary.png)
+![Lynis Scan Summary](../Screenshots/Week7/week7_2_lynis_scan_summary.png)
 
 The scan summary displays:
 - Hardening index score
@@ -81,14 +81,14 @@ To verify exposed services and firewall effectiveness, network scanning was perf
 ---
 
 ### Screenshot: Nmap Installation
-![Nmap Installation](Screenshots/Week7/week7_3_nmap_install.png)
+![Nmap Installation](../Screenshots/Week7/week7_3_nmap_install.png)
 
 This screenshot confirms that Nmap was installed successfully and ready for use.
 
 ---
 
 ### Screenshot: Nmap Scan Results
-![Nmap Scan Results](Screenshots/Week7/week7_4_nmap_scan.png)
+![Nmap Scan Results](../Screenshots/Week7/week7_4_nmap_scan.png)
 
 The scan results show that:
 - Only port **22 (SSH)** is open
