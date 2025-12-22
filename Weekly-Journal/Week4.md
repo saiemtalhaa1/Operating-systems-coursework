@@ -27,7 +27,7 @@ The objectives of Week 4 were:
 
 Before configuring network security, the system’s mounted filesystems were reviewed to understand storage structure.
 
-![Mounted Filesystems](Screenshots/Week4/Week_4_3_mount.png)
+![Mounted Filesystems](../Screenshots/Week4/Week_4_3_mount.png)
 
 This output shows:
 - Active mount points
@@ -42,7 +42,7 @@ Understanding mounted filesystems helps ensure system integrity and prevents mis
 
 Disk usage was analysed to confirm available storage and ensure no abnormal usage patterns existed.
 
-![Disk Usage df -h](Screenshots/Week4/Week_4_df-h.png)
+![Disk Usage df -h](../Screenshots/Week4/Week_4_df-h.png)
 
 This confirmed:
 - Adequate available disk space
@@ -83,7 +83,7 @@ UFW (Uncomplicated Firewall) was chosen due to its simplicity and integration wi
 
 The firewall was configured using UFW to enforce strict access control.
 
-![Firewall Configuration](Screenshots/Week4/week_4_1.png)
+![Firewall Configuration](../Screenshots/Week4/week_4_1.png)
 
 ### Commands used:
 - `sudo ufw enable`
