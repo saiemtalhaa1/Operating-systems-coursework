@@ -10,7 +10,8 @@ realistic Linux-based virtual environment that could support later tasks such as
 remote administration, security hardening, monitoring, and performance evaluation.
 
 A virtualised approach was chosen to allow safe experimentation without affecting
-the host system, while also reflecting real-world client–server system design.
+the host system, while also reflecting real-world client–server system design used
+in professional server environments.
 
 ---
 
@@ -20,13 +21,14 @@ The planned system architecture consists of two main components:
 
 - **Ubuntu Server (CLI-based)**  
   Acts as the primary server used for configuration, security implementation,
-  monitoring, and performance testing.
+  monitoring, performance testing, and auditing. All administration is performed
+  remotely using SSH.
 
 - **Workstation (Host System)**  
   Used to remotely access and manage the server via Secure Shell (SSH).
 
-This separation simulates a real-world server environment where administrative
-tasks are performed remotely rather than locally.
+This separation enforces command-line proficiency and mirrors real-world server
+administration where servers are managed remotely rather than locally.
 
 ---
 
@@ -42,7 +44,7 @@ The following structured planning steps were followed during system design:
 6. Verify system readiness using command-line tools  
 
 This methodical approach ensured the system was prepared for future configuration,
-security, and performance testing tasks.
+security hardening, and performance testing tasks.
 
 ---
 
@@ -54,18 +56,20 @@ Ubuntu Server 24.04 LTS was selected as the server operating system for the
 following reasons:
 
 - **Long-Term Support (LTS)**  
-  Provides stability and security updates for up to five years.
+  Provides stability and regular security updates for up to five years, which is
+  essential for secure server deployments.
 
 - **Extensive documentation and community support**  
-  Makes learning, troubleshooting, and configuration easier in an academic context.
+  Enables efficient troubleshooting and learning, particularly in an academic
+  environment.
 
 - **Wide package availability**  
   Required tools such as SSH, firewall utilities, monitoring tools, and security
   scanners are easily installed via APT.
 
 - **Strong VirtualBox compatibility**  
-  Ubuntu Server runs reliably within VirtualBox without requiring additional
-  configuration.
+  Ensures reliable operation within a virtualised environment without additional
+  configuration overhead.
 
 ---
 
@@ -106,8 +110,13 @@ following specifications:
 | Storage | 25 GB (VDI) |
 | Interface | Command Line (No GUI) |
 
-A minimal installation was intentionally chosen to reduce system overhead and
-improve security by limiting unnecessary services.
+### Headless Server Design Decision
+
+A minimal, headless installation was intentionally chosen to reduce system
+resource overhead and minimise the attack surface.  
+By avoiding a graphical user interface, fewer background services are required,
+which improves both **security** and **performance** and aligns with professional
+server best practices.
 
 ---
 
@@ -118,10 +127,13 @@ The server was configured using **NAT networking**.
 This configuration was chosen because it:
 - Allows internet access for software updates
 - Provides a simple and secure default setup
-- Reduces exposure of the server to external networks
+- Reduces direct exposure of the server to external networks
 
-Network configuration was verified using command-line tools to ensure the server
-received a valid IP address and had active network interfaces.
+### Network Design Trade-off
+
+While NAT simplifies connectivity and improves security, it limits direct inbound
+access. This trade-off is acceptable for this coursework because SSH access is
+managed from the workstation and security takes priority over public accessibility.
 
 ---
 
@@ -134,8 +146,8 @@ Key checks included:
 - Verifying active network interfaces and IP address
 - Confirming that the SSH service was installed and running
 
-These checks ensured that the server could be securely accessed and managed in
-later weeks.
+These checks ensured that the operating system was correctly installed and could
+be securely accessed in later weeks.
 
 ---
 
@@ -164,13 +176,13 @@ console.
 
 ## Reflection
 
-This week highlighted the importance of careful system planning before
-implementation. By clearly defining the system architecture and selecting an
-appropriate operating system early, later tasks such as security configuration
-and performance testing become more structured and manageable.
+This week demonstrated that careful system planning is critical before technical
+implementation. Early decisions regarding operating system choice, architecture,
+and network design directly impact system security, performance, and manageability.
 
 Using a minimal Ubuntu Server environment reinforced key Linux administration
-concepts and provided a solid foundation for the remaining coursework activities.
+principles and provided a strong foundation for subsequent security hardening,
+monitoring, and performance evaluation tasks.
 
 ---
 
