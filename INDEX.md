@@ -23,6 +23,22 @@ All work has been completed using a Linux-based virtualised environment and is s
 
 ---
 
+## Assessment Mapping (How this journal meets the brief)
+
+This journal is structured across Week 1 to Week 7, matching the coursework phases:
+
+- **Week 1:** System planning, architecture, network plan, and CLI specification evidence  
+- **Week 2:** Security baseline planning, threat model, and testing methodology  
+- **Week 3:** Workload/application selection and monitoring strategy  
+- **Week 4:** SSH hardening (keys), firewall restriction, and user privilege management (SSH-only admin)  
+- **Week 5:** AppArmor/SELinux, automatic security updates, fail2ban, and required scripts  
+- **Week 6:** Performance testing with data tables + graphs, bottleneck analysis, and optimisation (before/after)  
+- **Week 7:** Security audit (Lynis + nmap), service audit, remediation evidence, and remaining risk assessment  
+
+All system administration and configuration tasks were performed remotely using **SSH from the workstation**, in line with the coursework administrative constraint.
+
+---
+
 ## Weekly Journal Index
 
 Please use the links below to navigate directly to each weekly entry:
@@ -33,7 +49,7 @@ Please use the links below to navigate directly to each weekly entry:
 - 🌐 **[Week 4 – Network Services & Firewall Rules](Weekly-Journal/Week4.md)**
 - ⏱️ **[Week 5 – Scheduling, Cron Jobs & Automation](Weekly-Journal/Week5.md)**
 - 📝 **[Week 6 – Logging, Monitoring & System Health](Weekly-Journal/Week6.md)**
-- 🛡️ **[Week 7 – Final Deployment, Hardening & Review](Weekly-Journal//Week7.md)**
+- 🛡️ **[Week 7 – Final Deployment, Hardening & Review](Weekly-Journal/Week7.md)**
 
 ---
 
@@ -41,12 +57,11 @@ Please use the links below to navigate directly to each weekly entry:
 
 All screenshots used as evidence are stored in:
 
-📁 **[Weekly-Journal/Screenshots/](Screenshots/)**
-
+📁 **[Screenshots/](Screenshots/)**
 
 Each screenshot is referenced clearly inside the relevant weekly journal entry.
 
- ---
+---
 
 ## Final Note
 
