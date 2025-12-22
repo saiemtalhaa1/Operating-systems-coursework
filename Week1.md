@@ -14,7 +14,7 @@ for further system configuration tasks.
 
 ### SSH Service Verification
 
-![SSH Service Running](Screenshots/Week1/2_ssh_service_running.png)
+![SSH Service Running](Screenshots/Week1/3_ssh_running.png)
 
 This screenshot confirms that the SSH service is active and running on the
 server. SSH enables secure remote administration and is essential for managing
