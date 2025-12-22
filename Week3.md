@@ -43,7 +43,7 @@ The `ps` command was used to list running processes and understand how system re
 
 ### Screenshot: Process List Output
 
-![Process List Output](Screenshots/Week3/week_3_1.png)
+![Process List Output](Screenshots/Week3/week 3_1.png)
 
 This screenshot shows the output of the `ps aux` command, listing active processes along with CPU and memory usage.  
 It highlights background system services and user-level processes.
@@ -64,7 +64,7 @@ It displays:
 
 ### Screenshot: `top` Command Output
 
-![Top Command Output](Screenshots/Week3/week_3_2.png)
+![Top Command Output](Screenshots/Week3/week 3_2.png)
 
 This screenshot demonstrates real-time monitoring of CPU and memory usage.  
 The low load average confirms that the system is operating efficiently under normal conditions.
@@ -84,7 +84,7 @@ The low load average confirms that the system is operating efficiently under nor
 
 ### Screenshot: `htop` Interface
 
-![Htop Monitoring](Screenshots/Week3/week_3_3.png)
+![Htop Monitoring](Screenshots/Week3/week 3_3.png)
 
 This screenshot shows the `htop` interface, clearly displaying CPU cores, memory usage, and active processes.
 
