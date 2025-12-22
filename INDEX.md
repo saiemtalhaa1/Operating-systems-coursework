@@ -41,7 +41,8 @@ Please use the links below to navigate directly to each weekly entry:
 
 All screenshots used as evidence are stored in:
 
-📁 [Weekly-Journal/Screenshots/](Weekly-Journal/Screenshots/)
+📁 **[Weekly-Journal/Screenshots/](Screenshots/)**
+
 
 Each screenshot is referenced clearly inside the relevant weekly journal entry.
 
