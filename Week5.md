@@ -41,7 +41,7 @@ After creating the user, group membership was checked to understand default perm
 ### Command Used
 - `groups student3`
 
-![Default Groups](Screenshots/Week5/week5_2_groups_student3.png)
+![Default Groups](Screenshots/Week5/week5__2_groups_student3.png)
 
 This shows that the user initially belongs only to its own group and the `users` group.
 
@@ -54,7 +54,7 @@ To organise permissions properly, a new group named `cmpn202` was created.
 ### Command Used
 - `sudo groupadd cmpn202`
 
-![Group Creation](Screenshots/Week5/week5_3_groupadd.png)
+![Group Creation](Screenshots/Week5/week5__3_groupadd.png)
 
 Creating custom groups allows administrators to control access without modifying individual user permissions repeatedly.
 
@@ -67,7 +67,7 @@ The user was added to the newly created group using group modification commands.
 ### Command Used
 - `sudo usermod -aG cmpn202 student3`
 
-![User Added to Group](Screenshots/Week5/week5_4_usermod.png)
+![User Added to Group](Screenshots/Week5/week5__4_usermod.png)
 
 This ensures that `student3` inherits permissions associated with the `cmpn202` group.
 
@@ -80,7 +80,7 @@ Group membership was verified to confirm successful assignment.
 ### Command Used
 - `groups student3`
 
-![Group Verification](Screenshots/Week5/week5_2_groups_verified.png)
+![Group Verification](Screenshots/Week5/week5__2_groups_verified.png)
 
 This confirms that the user now belongs to both the default groups and the `cmpn202` group.
 
