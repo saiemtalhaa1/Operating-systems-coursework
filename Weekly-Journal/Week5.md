@@ -1,101 +1,111 @@
-# 🛡️ Week 5 – User Management & Access Control
+# 🛡️ Week 5 – Advanced Security Controls & Monitoring Infrastructure
 
 ---
 
 ## 1. Introduction
-Week 5 focused on **user and group management** in Linux, which is a core aspect of system security and administration.  
-Instead of relying on a single user, proper access control was implemented by creating users, managing groups, and assigning permissions carefully.
 
-This week demonstrates how Linux enforces security through **user isolation and controlled privilege escalation**.
+Week 5 focused on implementing **advanced operating system security controls** and building a basic monitoring and verification infrastructure.  
+These controls go beyond basic firewall protection and help detect, prevent, and report security incidents.
+
+All configuration tasks were performed **remotely via SSH from the workstation**, in accordance with the coursework administrative constraint.
 
 ---
 
 ## 2. Objectives for This Week
-The main objectives of Week 5 were:
 
-- Create additional user accounts
-- Understand Linux user and group structure
-- Assign users to groups
-- Manage permissions using group membership
-- Apply the principle of least privilege
+The objectives of Week 5 were:
+
+- Implement mandatory access control using AppArmor or SELinux
+- Enable automatic security updates
+- Configure intrusion prevention using fail2ban
+- Create a security baseline verification script
+- Develop a remote monitoring script
+- Verify configurations using command-line evidence
 
 ---
 
-## 3. User Account Creation
+## 3. Mandatory Access Control (AppArmor)
 
-A new user account (`student3`) was created to avoid using the root account for regular tasks.
+AppArmor was used to enforce mandatory access control policies on the system.  
+It restricts what applications are allowed to access, even if they are compromised.
 
 ### Command Used
-- `sudo adduser student3`
+- `sudo aa-status`
 
-![User Creation](../Screenshots/Week5/Week5_1_adduser.png)
+This command verifies that AppArmor is enabled and actively enforcing profiles.
 
-This confirms that the user was successfully created with a home directory and default settings.
+*(Screenshot to be added)*
 
 ---
 
-## 4. Understanding User Groups
+## 4. Automatic Security Updates
 
-After creating the user, group membership was checked to understand default permissions.
+Automatic updates were configured to ensure that critical security patches are applied without manual intervention.
 
 ### Command Used
-- `groups student3`
+- `sudo apt install unattended-upgrades`
+- `sudo dpkg-reconfigure unattended-upgrades`
 
-![Default Groups](../Screenshots/Week5/week5__2_groups_student3.png)
+This reduces the risk of vulnerabilities caused by outdated packages.
 
-This shows that the user initially belongs only to its own group and the `users` group.
+*(Screenshot to be added)*
 
 ---
 
-## 5. Creating a Custom Group
+## 5. Intrusion Prevention with fail2ban
 
-To organise permissions properly, a new group named `cmpn202` was created.
+fail2ban was configured to protect SSH by automatically blocking IP addresses that generate repeated failed login attempts.
 
 ### Command Used
-- `sudo groupadd cmpn202`
+- `sudo systemctl status fail2ban`
 
-![Group Creation](../Screenshots/Week5/week5__3_groupadd.png)
+This helps mitigate brute-force SSH attacks.
 
-Creating custom groups allows administrators to control access without modifying individual user permissions repeatedly.
-
----
-
-## 6. Assigning User to Group
-
-The user was added to the newly created group using group modification commands.
-
-### Command Used
-- `sudo usermod -aG cmpn202 student3`
-
-![User Added to Group](../Screenshots/Week5/week5__4_usermod.png)
-
-This ensures that `student3` inherits permissions associated with the `cmpn202` group.
+*(Screenshot to be added)*
 
 ---
 
-## 7. Verifying Group Membership
+## 6. Security Baseline Verification Script
 
-Group membership was verified to confirm successful assignment.
+A security verification script named `security-baseline.sh` was created on the server.  
+This script checks whether key security controls are enabled and correctly configured.
 
-### Command Used
-- `groups student3`
+### Example checks performed:
+- SSH service status
+- Firewall status
+- AppArmor status
+- fail2ban service status
+- Automatic updates configuration
 
-![Group Verification](../Screenshots/Week5/week5__2_groups_verified.png)
+All script lines are commented to explain their function.
 
-This confirms that the user now belongs to both the default groups and the `cmpn202` group.
+*(Script output screenshot to be added)*
 
 ---
 
-## 8. Access Control Importance
+## 7. Remote Monitoring Script
 
-Proper user and group management provides:
+A remote monitoring script named `monitor-server.sh` was created on the workstation.  
+The script connects to the server via SSH and collects system performance metrics.
 
-- Improved system security
-- Clear separation of responsibilities
-- Reduced risk of accidental system damage
-- Easier permission management
+### Metrics collected include:
+- CPU usage
+- Memory usage
+- Disk usage
+- System uptime
 
-Linux permissions combined with group-based access control form the backbone of secure system administration.
+This supports later performance analysis in Week 6.
+
+*(Script output screenshot to be added)*
+
+---
+
+## 8. Security vs Performance Trade-off
+
+Advanced security controls can introduce minor performance overhead due to additional checks and logging.  
+However, this trade-off is acceptable because improved security and visibility significantly reduce the risk of system compromise.
+
+Security was prioritised in line with best practices for server environments.
 
 ---
 
@@ -103,19 +113,21 @@ Linux permissions combined with group-based access control form the backbone of 
 
 | Requirement | Status |
 |------------|--------|
-| New user created | ✅ Completed |
-| Group structure reviewed | ✅ Completed |
-| Custom group created | ✅ Completed |
-| User added to group | ✅ Completed |
-| Group membership verified | ✅ Completed |
+| AppArmor enabled | ⬜ |
+| Automatic updates configured | ⬜ |
+| fail2ban configured | ⬜ |
+| Security baseline script created | ⬜ |
+| Remote monitoring script created | ⬜ |
+| SSH-only administration | ✅ |
 
 ---
 
 ## 10. Reflection
-Week 5 demonstrated that security is strongly tied to **how users and permissions are managed**.  
-By separating users, assigning roles via groups, and avoiding unnecessary privileges, the system becomes safer and easier to maintain.
 
-This week reinforced real-world Linux administration practices used in enterprise environments.
+Week 5 demonstrated how layered security controls strengthen operating system protection.  
+By combining mandatory access control, automatic updates, intrusion prevention, and monitoring scripts, the system became more resilient to both known and unknown threats.
+
+These controls provide essential security visibility and prepare the system for performance evaluation and auditing in later weeks.
 
 ---
 
