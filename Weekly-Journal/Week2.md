@@ -3,40 +3,46 @@
 ---
 
 ## 1. Introduction
-In Week 2, the focus was on securing the Linux server and enabling safe remote administration.  
-Instead of managing the server only through the local console, secure remote access was configured to allow efficient and professional system management.
 
-This week introduced the importance of balancing **accessibility** and **security** when administering servers.
+In Week 2, the focus was on securing the Linux server and enabling safe remote administration.  
+Instead of managing the server only through the local console, secure remote access was prepared to allow efficient and professional system management.
+
+Remote administration is essential in real-world environments, but it introduces additional security risks.  
+This week highlighted the importance of balancing **accessibility**, **security**, and **operating system control** when administering servers.
 
 ---
 
 ## 2. Objectives for This Week
+
 The main objectives of Week 2 were:
 
 - Enable secure remote administration
 - Verify SSH service availability
 - Confirm correct network configuration
-- Understand security risks related to remote access
-- Prepare the system for future security hardening
+- Identify security risks related to remote access
+- Define a security baseline for future hardening tasks
+
+These objectives support later firewall configuration, access control enforcement, and intrusion detection.
 
 ---
 
 ## 3. Remote Administration Overview
 
 ### Why Remote Administration Is Needed
-Remote administration allows system administrators to manage servers without physical access.
+
+Remote administration allows system administrators to manage servers without physical access, which is the standard practice in data centres and cloud environments.
 
 **Advantages:**
-- Faster system management
+- Faster system management and troubleshooting
 - Reduced downtime
-- Real-world server administration practice
+- Real-world server administration experience using SSH
 
 **Potential Risks:**
 - Unauthorized login attempts
 - Brute-force password attacks
-- Network exposure
+- Increased network exposure
 
-Because of these risks, strong security controls are essential.
+Because of these risks, remote access must be secured using strong authentication and restrictive access policies.
 
 ---
 
@@ -47,7 +53,7 @@ Before allowing remote access, the SSH service was checked to ensure it was acti
 The following command was used:
 - `sudo systemctl status ssh`
 
-This confirms that the SSH daemon is running and listening for incoming connections.
+This confirms that the SSH daemon is running and listening for incoming connections, which is required for remote system administration.
 
 ![SSH Service Status](../Screenshots/Week2/Week2_1.png)
 
@@ -55,7 +61,7 @@ This confirms that the SSH daemon is running and listening for incoming connecti
 
 ## 5. Network Configuration Verification
 
-SSH requires a valid network connection.  
+SSH requires a valid and active network connection.  
 The server’s network interface and IP address were verified using:
 
 - `ip a`
@@ -65,19 +71,21 @@ This confirmed:
 - The assigned IPv4 address
 - The interface state was **UP**
 
+Correct network configuration is essential for reliable remote access and later firewall rule enforcement.
+
 ![Network Interface and IP Address](../Screenshots/Week2/Week2_2.png)
 
 ---
 
 ## 6. File Permission Configuration
 
-Basic file permissions were reviewed to understand Linux access control.
+Basic file permissions were reviewed to understand Linux access control at the operating system level.
 
 A test file was created and permissions were modified using:
 - `touch permissions.txt`
 - `chmod 700 permissions.txt`
 
-This ensures that only the file owner has full access.
+This configuration ensures that only the file owner has full access, supporting the principle of **least privilege** and reducing the risk of unauthorized data access.
 
 ![File Permission Change](../Screenshots/Week2/Week2_3.png)
 
@@ -88,23 +96,23 @@ This ensures that only the file owner has full access.
 File ownership was checked and corrected where required using:
 - `sudo chown user:user filename`
 
-This ensures correct access rights and prevents unauthorized file manipulation.
+Correct file ownership ensures that access control policies are enforced correctly by the operating system and prevents unauthorized file manipulation by other users or processes.
 
 ![File Ownership Check](../Screenshots/Week2/Week2_4.png)
 
 ---
 
-## 8. Security Risk Identification
+## 8. Threat Model and Risk Identification
 
-Remote access introduces potential security threats.
+Remote access introduces several operating system security threats that must be mitigated.
 
-| Risk Type | Description | Potential Impact |
-|---------|------------|------------------|
-| Brute-force attacks | Repeated login attempts | Account compromise |
-| Weak credentials | Simple passwords | Unauthorized access |
-| Open services | Exposed ports | Larger attack surface |
+| Threat | Description | Impact | Mitigation Strategy |
+|------|------------|--------|---------------------|
+| Brute-force SSH | Repeated login attempts | Account compromise | Key-based authentication, disable passwords, fail2ban |
+| Weak credentials | Simple or reused passwords | Unauthorized access | Enforce key-based SSH and restricted sudo access |
+| Open services | Unnecessary exposed ports | Larger attack surface | Firewall default-deny policy and service minimisation |
 
-These risks will be addressed further in later weeks.
+These mitigation strategies are implemented and evidenced in later weeks.
 
 ---
 
@@ -113,17 +121,27 @@ These risks will be addressed further in later weeks.
 | Feature | Secure SSH Access | Insecure Access |
 |------|------------------|----------------|
 | Encryption | Yes | No |
-| Authentication | Required | Optional or none |
+| Authentication | Mandatory | Optional or none |
 | Data protection | Encrypted traffic | Plain text |
 | Security level | High | Low |
 
+This comparison highlights why SSH is essential for secure remote administration.
+
 ---
 
-## 10. Reflection
-Week 2 demonstrated that remote access must be implemented securely.  
-While SSH enables efficient administration, improper configuration can expose the system to serious threats.
+## 10. Security vs Usability Trade-off
 
-This week provided a strong foundation for upcoming firewall configuration and access control tasks.
+Disabling password-based authentication improves security by preventing brute-force attacks but reduces convenience during initial access.  
+This trade-off is justified because key-based SSH authentication provides stronger protection and aligns with professional server administration practices.
+
+---
+
+## 11. Reflection
+
+Week 2 demonstrated that remote access must be implemented securely to protect the operating system from common attack vectors.  
+While SSH enables efficient administration, improper configuration can significantly increase system risk.
+
+The security baseline established this week provides a strong foundation for firewall configuration, access control, intrusion detection, and performance monitoring in subsequent weeks.
 
 ---
 
