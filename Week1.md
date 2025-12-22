@@ -1,33 +1,16 @@
 # Week 1 – System Planning & Distribution Selection
----
-
-### Virtual Machine Creation
-
-![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
-
-This screenshot shows the successful creation of the Ubuntu Server virtual
-machine using Oracle VirtualBox, including allocated memory, CPU, and storage
-configuration. This confirms that the virtual environment was prepared correctly
-for further system configuration tasks.
-
----
-
-### SSH Service Verification
-
-![SSH Service Running](Screenshots/Week1/3_ssh_running.png)
-
-This screenshot confirms that the SSH service is active and running on the
-server. SSH enables secure remote administration and is essential for managing
-the system without relying on the VirtualBox console.
 
 ---
 
 ## Introduction
 
-This week focused on planning the operating system environment required for the Operating Systems coursework.  
-The objective was to design a stable, secure, and realistic Linux-based virtual environment that could support later tasks such as remote administration, security hardening, monitoring, and performance evaluation.
+This week focused on planning the operating system environment required for the
+Operating Systems coursework. The objective was to design a stable, secure, and
+realistic Linux-based virtual environment that could support later tasks such as
+remote administration, security hardening, monitoring, and performance evaluation.
 
-A virtualised approach was chosen to allow safe experimentation without affecting the host system, while also reflecting real-world client–server system design.
+A virtualised approach was chosen to allow safe experimentation without affecting
+the host system, while also reflecting real-world client–server system design.
 
 ---
 
@@ -36,12 +19,14 @@ A virtualised approach was chosen to allow safe experimentation without affectin
 The planned system architecture consists of two main components:
 
 - **Ubuntu Server (CLI-based)**  
-  Acts as the primary server used for configuration, security implementation, monitoring, and performance testing.
+  Acts as the primary server used for configuration, security implementation,
+  monitoring, and performance testing.
 
-- **Workstation (host system)**  
+- **Workstation (Host System)**  
   Used to remotely access and manage the server via Secure Shell (SSH).
 
-This separation simulates a real-world server environment where administrative tasks are performed remotely rather than locally.
+This separation simulates a real-world server environment where administrative
+tasks are performed remotely rather than locally.
 
 ---
 
@@ -56,7 +41,8 @@ The following structured planning steps were followed during system design:
 5. Plan secure network connectivity  
 6. Verify system readiness using command-line tools  
 
-This methodical approach ensured the system was prepared for future configuration, security, and performance testing tasks.
+This methodical approach ensured the system was prepared for future configuration,
+security, and performance testing tasks.
 
 ---
 
@@ -64,25 +50,26 @@ This methodical approach ensured the system was prepared for future configuratio
 
 ### Selected Distribution: Ubuntu Server 24.04 LTS
 
-Ubuntu Server 24.04 LTS was selected as the server operating system for the following reasons:
+Ubuntu Server 24.04 LTS was selected as the server operating system for the
+following reasons:
 
 - **Long-Term Support (LTS)**  
   Provides stability and security updates for up to five years.
 
 - **Extensive documentation and community support**  
-  Makes learning, troubleshooting, and configuration easier, especially for academic environments.
+  Makes learning, troubleshooting, and configuration easier in an academic context.
 
 - **Wide package availability**  
-  Required tools such as SSH, firewall utilities, monitoring tools, and security scanners are easily installed via APT.
+  Required tools such as SSH, firewall utilities, monitoring tools, and security
+  scanners are easily installed via APT.
 
 - **Strong VirtualBox compatibility**  
-  Ubuntu Server runs reliably within VirtualBox without requiring additional drivers or configuration.
+  Ubuntu Server runs reliably within VirtualBox without requiring additional
+  configuration.
 
 ---
 
 ## Distribution Comparison Table
-
-Several alternative Linux server distributions were considered before making the final selection.
 
 | Distribution | Stability | Documentation | VirtualBox Support | Decision |
 |-------------|----------|---------------|--------------------|----------|
@@ -91,13 +78,15 @@ Several alternative Linux server distributions were considered before making the
 | Fedora Server | Medium | Moderate | Good | Not chosen |
 | CentOS Stream | High | Limited | Moderate | Not chosen |
 
-Ubuntu Server was selected due to its balance between long-term stability, ease of use, and suitability for both academic and real-world server environments.
+Ubuntu Server was selected due to its balance between long-term stability, ease of
+use, and suitability for both academic and real-world server environments.
 
 ---
 
 ## Virtual Machine Configuration
 
-The Ubuntu Server virtual machine was configured using Oracle VirtualBox with the following specifications:
+The Ubuntu Server virtual machine was configured using Oracle VirtualBox with the
+following specifications:
 
 | Component | Configuration |
 |---------|--------------|
@@ -107,7 +96,8 @@ The Ubuntu Server virtual machine was configured using Oracle VirtualBox with th
 | Storage | 25 GB (VDI) |
 | Interface | Command Line (No GUI) |
 
-A minimal installation was intentionally chosen to reduce system overhead and improve security by limiting unnecessary services.
+A minimal installation was intentionally chosen to reduce system overhead and
+improve security by limiting unnecessary services.
 
 ---
 
@@ -120,25 +110,48 @@ This configuration was chosen because it:
 - Provides a simple and secure default setup
 - Reduces exposure of the server to external networks
 
-Network configuration was verified using command-line tools to ensure the server received a valid IP address and had active network interfaces.
+Network configuration was verified using command-line tools to ensure the server
+received a valid IP address and had active network interfaces.
 
 ---
 
 ## Initial System Verification
 
-Basic system verification was performed using the command line to confirm that the server was operational and ready for remote administration.
+Basic system verification was performed using the command line to confirm that the
+server was operational and ready for remote administration.
 
 Key checks included:
 - Verifying active network interfaces and IP address
 - Confirming that the SSH service was installed and running
 
-These checks ensured that the server could be securely accessed and managed in later weeks.
+These checks ensured that the server could be securely accessed and managed in
+later weeks.
+
+---
+
+## Evidence & Screenshots
+
+### Virtual Machine Creation
+
+![VirtualBox VM Created](Screenshots/Week1/1_vm_created.png)
+
+This screenshot shows the successful creation of the Ubuntu Server virtual
+machine using Oracle VirtualBox, including allocated memory, CPU, and storage
+configuration.
+
+---
+
+### SSH Service Verification
+
+![SSH Service Running](Screenshots/Week1/3_ssh_running.png)
+
+This screenshot confirms that the SSH service is active and running on the
+server, enabling secure remote administration without relying on the VirtualBox
+console.
 
 ---
 
 ## Week 1 Requirement Checklist
-
-The following table confirms that all Week 1 requirements were completed:
 
 | Requirement | Status |
 |------------|--------|
@@ -153,12 +166,15 @@ The following table confirms that all Week 1 requirements were completed:
 
 ## Reflection
 
-This week highlighted the importance of careful system planning before implementation.  
-By clearly defining the system architecture and selecting an appropriate operating system early, later tasks such as security configuration and performance testing become more structured and manageable.
+This week highlighted the importance of careful system planning before
+implementation. By clearly defining the system architecture and selecting an
+appropriate operating system early, later tasks such as security configuration
+and performance testing become more structured and manageable.
 
-Using a minimal Ubuntu Server environment reinforced key Linux administration concepts and provided a solid foundation for the remaining coursework activities.
+Using a minimal Ubuntu Server environment reinforced key Linux administration
+concepts and provided a solid foundation for the remaining coursework activities.
 
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md) |
+[Back to Index](INDEX.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md)
