@@ -49,7 +49,7 @@ The following command was used:
 
 This confirms that the SSH daemon is running and listening for incoming connections.
 
-![SSH Service Status](Screenshots/Week2/Week2_1.png)
+![SSH Service Status](../Screenshots/Week2/Week2_1.png)
 
 ---
 
@@ -65,7 +65,7 @@ This confirmed:
 - The assigned IPv4 address
 - The interface state was **UP**
 
-![Network Interface and IP Address](Screenshots/Week2/Week2_2.png)
+![Network Interface and IP Address](../Screenshots/Week2/Week2_2.png)
 
 ---
 
@@ -79,7 +79,7 @@ A test file was created and permissions were modified using:
 
 This ensures that only the file owner has full access.
 
-![File Permission Change](Screenshots/Week2/Week2_3.png)
+![File Permission Change](../Screenshots/Week2/Week2_3.png)
 
 ---
 
@@ -90,7 +90,7 @@ File ownership was checked and corrected where required using:
 
 This ensures correct access rights and prevents unauthorized file manipulation.
 
-![File Ownership Check](Screenshots/Week2/Week2_4.png)
+![File Ownership Check](../Screenshots/Week2/Week2_4.png)
 
 ---
 
