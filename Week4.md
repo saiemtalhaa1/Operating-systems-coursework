@@ -3,135 +3,142 @@
 ---
 
 ## 1. Introduction
-Week 4 focused on implementing **network security controls** to protect the Linux server from unauthorised access.  
-While earlier weeks concentrated on planning and basic configuration, this week introduced **active security enforcement** through firewall rules and controlled service exposure.
 
-The main goal was to ensure that only **essential services** were accessible and that all other traffic was restricted by default.
+Week 4 focused on implementing **network-level security controls** to protect the Ubuntu Server from unauthorised access.  
+Unlike previous weeks that concentrated on monitoring and analysis, this week applied **active protection mechanisms** to control incoming network traffic.
+
+The main objective was to minimise the system’s attack surface by allowing only essential services.
 
 ---
 
 ## 2. Objectives for This Week
+
 The objectives of Week 4 were:
 
-- Identify essential network services running on the server
-- Configure a firewall using UFW (Uncomplicated Firewall)
-- Restrict network access to required services only
-- Reduce the system’s attack surface
-- Verify firewall rules and behaviour
+- Review active network services
+- Understand mounted filesystems and disk structure
+- Configure firewall rules using UFW
+- Restrict network access to required services
+- Verify system security and stability
 
 ---
 
-## 3. Network Services Overview
+## 3. Filesystem and Mount Point Analysis
 
-A network service is any application that listens for incoming network connections.  
-Unnecessary services increase security risks and should be disabled or blocked.
+Before configuring network security, the system’s mounted filesystems were reviewed to understand storage structure.
 
-### Services reviewed on the server:
+![Mounted Filesystems](Screenshots/Week4/Week_4_3_mount.png)
+
+This output shows:
+- Active mount points
+- Filesystem types
+- Read/write permissions
+
+Understanding mounted filesystems helps ensure system integrity and prevents misconfiguration.
+
+---
+
+## 4. Disk Usage Verification
+
+Disk usage was analysed to confirm available storage and ensure no abnormal usage patterns existed.
+
+![Disk Usage df -h](Screenshots/Week4/Week_4_df-h.png)
+
+This confirmed:
+- Adequate available disk space
+- Correct mounting of logical volumes
+- No unexpected storage consumption
+
+Stable disk usage is essential before enabling firewall and security services.
+
+---
+
+## 5. Network Services Overview
+
+A network service is any process listening for incoming network connections.  
+Unnecessary services increase security risks and should be restricted.
+
+### Services identified:
 - **SSH (port 22)** – required for remote administration
-- No additional public services enabled
+- No additional externally exposed services
 
-By limiting exposed services, the system becomes easier to secure and monitor.
-
----
-
-## 4. Firewall Concept and Purpose
-
-A firewall acts as a **traffic control mechanism**, deciding which network packets are allowed or blocked.
-
-### Key firewall principles applied:
-- **Default deny policy** – block everything unless explicitly allowed
-- **Least privilege** – allow only what is necessary
-- **Controlled access** – restrict services to trusted connections
-
-UFW was selected due to its simplicity, reliability, and integration with Ubuntu.
+This limited exposure improves overall system security.
 
 ---
 
-## 5. Firewall Configuration Workflow
+## 6. Firewall Concept and Purpose
 
-The following workflow was used to configure firewall rules:
+A firewall controls which network traffic is allowed or blocked.
 
-Identify required services
-↓
-Enable firewall
-↓
-Allow SSH traffic
-↓
-Block all other incoming connections
-↓
-Verify firewall status and rules
+Key principles applied:
+- **Default deny policy**
+- **Least privilege**
+- **Explicit service allowance**
 
-
-
-This structured process ensures that security rules are applied logically and safely.
+UFW (Uncomplicated Firewall) was chosen due to its simplicity and integration with Ubuntu Server.
 
 ---
 
-## 6. UFW Firewall Configuration
+## 7. Firewall Configuration Using UFW
 
-The firewall was configured using UFW with the following steps:
+The firewall was configured using UFW to enforce strict access control.
 
-### Key actions performed:
-- Enabled UFW firewall
-- Allowed SSH connections (port 22)
-- Verified default deny behaviour
+![Firewall Configuration](Screenshots/Week4/week_4_1.png)
 
 ### Commands used:
 - `sudo ufw enable`
 - `sudo ufw allow ssh`
 - `sudo ufw status verbose`
 
-These commands confirmed that:
+These commands ensured:
 - The firewall was active
-- SSH traffic was explicitly allowed
-- All other incoming connections were blocked by default
-
----
-
-## 7. Before vs After Firewall Comparison
-
-| Aspect | Before Firewall | After Firewall |
-|-----|----------------|----------------|
-| Incoming connections | Unrestricted | Restricted |
-| Service exposure | Higher | Minimal |
-| Attack surface | Large | Reduced |
-| Security posture | Weak | Strong |
-
-This comparison highlights the effectiveness of firewall rules in improving system security.
+- SSH access was permitted
+- All other incoming connections were blocked
 
 ---
 
 ## 8. Security Impact Analysis
 
-Implementing firewall rules significantly improved system security by:
-- Preventing unauthorised network access
-- Limiting exposed services
-- Reducing the risk of automated attacks
+After firewall configuration:
+- Network exposure was significantly reduced
+- Only essential services remained accessible
+- The system became more resistant to automated attacks
 
-Firewall configuration is a critical defence layer and complements other security mechanisms such as SSH hardening and user privilege management.
+Firewall configuration provides a critical first layer of defence.
 
 ---
 
-## 9. Week 4 Requirement Checklist
+## 9. Before vs After Firewall Comparison
+
+| Aspect | Before Firewall | After Firewall |
+|------|----------------|---------------|
+| Incoming traffic | Unrestricted | Restricted |
+| Exposed services | Multiple | SSH only |
+| Attack surface | Large | Reduced |
+| Security posture | Weak | Strong |
+
+---
+
+## 10. Week 4 Requirement Checklist
 
 | Requirement | Status |
-|-----------|--------|
-| Network services reviewed | ✅ Completed |
-| Firewall installed and enabled | ✅ Completed |
-| SSH access allowed | ✅ Completed |
+|------------|--------|
+| Filesystem reviewed | ✅ Completed |
+| Disk usage verified | ✅ Completed |
+| Firewall enabled | ✅ Completed |
+| SSH allowed | ✅ Completed |
 | Default deny policy applied | ✅ Completed |
-| Firewall rules verified | ✅ Completed |
 
 ---
 
-## 10. Reflection
-Week 4 demonstrated how simple security measures can significantly strengthen a system.  
-By enabling a firewall and restricting network traffic, the server was transformed from an open system into a controlled and protected environment.
+## 11. Reflection
 
-This week reinforced the importance of **defence in depth**, where firewalls act as a critical first line of protection against external threats.
+Week 4 demonstrated how enforcing simple firewall rules can dramatically improve system security.  
+By restricting network access and allowing only essential services, the server transitioned into a controlled and protected environment.
+
+This week reinforced the importance of proactive security configuration in real-world systems.
 
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md) |
-
+[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | [Week 7](Week7.md)
