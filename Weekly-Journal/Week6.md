@@ -46,7 +46,7 @@ This approach ensures that observed performance changes are **directly linked to
 Before stress testing, system uptime was checked to confirm stability and normal operation.
 
 ### Screenshot: System uptime
-![Uptime](Screenshots/Week6/week6_1_uptime.png)
+![Uptime](../Screenshots/Week6/week6_1_uptime.png)
 
 The output confirms:
 - The system is running normally
@@ -62,7 +62,7 @@ This establishes a reliable baseline for further testing.
 CPU usage was monitored while the system was idle using the `top` command.
 
 ### Screenshot: CPU idle state
-![Top idle](Screenshots/Week6/week6_2_top_idle.png)
+![Top idle](../Screenshots/Week6/week6_2_top_idle.png)
 
 **Observations:**
 - CPU usage remained very low
@@ -78,7 +78,7 @@ This indicates efficient CPU utilisation when no workload is applied.
 The `stress` utility was installed to simulate CPU and memory workload.
 
 ### Screenshot: Installing stress
-![Install stress](Screenshots/Week6/week6_3_install_stress.png)
+![Install stress](../Screenshots/Week6/week6_3_install_stress.png)
 
 Using controlled tools like `stress` allows realistic performance testing without damaging the system.
 
@@ -89,7 +89,7 @@ Using controlled tools like `stress` allows realistic performance testing withou
 CPU stress testing was conducted to observe behaviour under heavy computation.
 
 ### Screenshot: CPU under stress
-![CPU stress](Screenshots/Week6/week6_3_cpu_stress_top.png)
+![CPU stress](../Screenshots/Week6/week6_3_cpu_stress_top.png)
 
 **Analysis:**
 - CPU utilisation increased significantly
@@ -105,10 +105,10 @@ This demonstrates that the processor can handle increased workloads without syst
 Memory usage was monitored in both idle and active conditions.
 
 ### Screenshot: Memory usage (idle)
-![Memory idle](Screenshots/Week6/week6_3_memory_idle.png)
+![Memory idle](../Screenshots/Week6/week6_3_memory_idle.png)
 
 ### Screenshot: Memory usage (under load)
-![Memory top](Screenshots/Week6/week6_3_memory_top.png)
+![Memory top](../Screenshots/Week6/week6_3_memory_top.png)
 
 **Observations:**
 - Memory usage increased during stress testing
@@ -124,10 +124,10 @@ This indicates effective memory management by the operating system.
 Disk performance was evaluated by comparing idle and write-intensive states.
 
 ### Screenshot: Disk idle
-![Disk idle](Screenshots/Week6/week6_4_disk_idle.png)
+![Disk idle](../Screenshots/Week6/week6_4_disk_idle.png)
 
 ### Screenshot: Disk write activity
-![Disk IO start](Screenshots/Week6/week6_4_disk_iostart.png)
+![Disk IO start](../Screenshots/Week6/week6_4_disk_iostart.png)
 
 **Analysis:**
 - Disk activity increased significantly during write operations
@@ -143,7 +143,7 @@ Disk I/O was identified as a **potential bottleneck** during intensive operation
 Network latency was tested using the `ping` command.
 
 ### Screenshot: Network ping test
-![Network ping](Screenshots/Week6/week6_5_network_ping.png)
+![Network ping](../Screenshots/Week6/week6_5_network_ping.png)
 
 **Results:**
 - Stable connectivity was maintained
