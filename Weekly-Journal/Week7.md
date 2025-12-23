@@ -4,10 +4,10 @@
 
 ## 1. Introduction
 
-Week 7 focused on performing a **comprehensive security audit** and conducting a **final evaluation** of the Linux server environment.  
-The objective was to verify that all configurations implemented throughout the coursework collectively provide a secure, stable, and well-managed system.
+Week 7 focused on performing a **comprehensive security audit** and conducting a **final system evaluation** of the Linux server environment.  
+The purpose of this phase was to validate that all configurations implemented throughout the coursework collectively provide a secure, stable, and well-managed operating system.
 
-Rather than introducing new configurations, this week concentrated on **validation, assessment, and reflection**, which are essential stages in real-world system administration and security management.
+Rather than introducing new configurations, this week concentrated on **verification, assessment, and reflection**, which are essential practices in real-world system administration and security management.
 
 ---
 
@@ -15,112 +15,112 @@ Rather than introducing new configurations, this week concentrated on **validati
 
 The objectives of Week 7 were to:
 
-- Conduct a full system security audit
-- Identify potential vulnerabilities and weaknesses
-- Verify firewall and network exposure
-- Review installed services and access controls
-- Evaluate overall system readiness
+- Conduct a structured system security audit
+- Identify vulnerabilities and configuration weaknesses
+- Verify firewall rules and exposed network services
+- Review running services and access control mechanisms
+- Evaluate overall system readiness and resilience
 - Reflect on learning outcomes and future improvements
 
 ---
 
 ## 3. Security Auditing Overview
 
-A security audit assesses whether system configurations align with security best practices and organisational policies.
+A security audit evaluates whether a system’s configuration aligns with security best practices and operational requirements.
 
-Key questions addressed during the audit:
+Key audit questions addressed:
 - Are only required services running?
-- Is the system properly hardened?
-- Are access controls enforced correctly?
-- Is the system resilient against common attack techniques?
+- Is network exposure minimised?
+- Are access controls correctly enforced?
+- Do existing security controls work as intended?
 
-Security auditing ensures that controls are **effective**, not just configured.
+Security auditing ensures that controls are not only configured, but also **effective**.
 
 ---
 
 ## 4. System Audit Using Lynis
 
-Lynis was used as the primary auditing tool for evaluating system security.
+Lynis was used as the primary auditing tool to assess overall system security.
 
 ### Purpose of Lynis
 - Analyse system configuration and permissions
-- Detect misconfigurations and weaknesses
+- Detect security weaknesses and misconfigurations
 - Provide hardening recommendations
-- Generate a measurable security score
+- Generate a measurable hardening score
 
-### Screenshot: Lynis Installation
+### Lynis Installation Evidence
 ![Lynis Installation](../Screenshots/Week7/week7_1_lynis_install.png)
 
-This screenshot shows the successful installation of Lynis using the APT package manager.
+This confirms that Lynis was successfully installed using the system package manager.
 
 ---
 
-### Screenshot: Lynis Scan Summary
+### Lynis Scan Summary
 ![Lynis Scan Summary](../Screenshots/Week7/week7_2_lynis_scan_summary.png)
 
-The scan summary displays:
-- Hardening index score
-- Number of tests performed
-- Enabled security modules
+The scan summary provides:
+- A system hardening index
+- The number of tests performed
+- Active security controls
 - Identified improvement areas
 
-The results confirm that core security mechanisms such as the firewall are active, while also highlighting areas for future enhancement.
+The results confirm that key security mechanisms such as firewall enforcement and access control are active, while also highlighting areas for future optimisation.
 
 ---
 
 ## 5. Network Security Assessment Using Nmap
 
-To verify exposed services and firewall effectiveness, network scanning was performed using Nmap.
+To validate firewall effectiveness and confirm minimal exposure, network scanning was performed using Nmap.
 
 ### Purpose of Nmap
 - Identify open ports
-- Detect active services
-- Confirm minimal network exposure
-- Validate firewall rules
+- Detect exposed services
+- Verify firewall rules
+- Confirm attack surface reduction
 
 ---
 
-### Screenshot: Nmap Installation
+### Nmap Installation Evidence
 ![Nmap Installation](../Screenshots/Week7/week7_3_nmap_install.png)
 
-This screenshot confirms that Nmap was installed successfully and ready for use.
+This confirms that Nmap was successfully installed and ready for network assessment.
 
 ---
 
-### Screenshot: Nmap Scan Results
+### Nmap Scan Results
 ![Nmap Scan Results](../Screenshots/Week7/week7_4_nmap_scan.png)
 
 The scan results show that:
-- Only port **22 (SSH)** is open
+- Only **port 22 (SSH)** is open
 - No unnecessary services are exposed
-- Firewall rules are functioning as intended
+- Firewall rules are operating correctly
 
-This demonstrates effective network hardening and controlled service exposure.
+This confirms effective network hardening and controlled service exposure.
 
 ---
 
 ## 6. Service Review and Justification
 
-All active services were reviewed to ensure they were necessary and justified.
+Running services were reviewed to ensure that each service was required and justified.
 
-### Service evaluation criteria:
-- Is the service required for system operation?
-- Does it introduce security risks?
-- Can it be safely disabled?
+Evaluation criteria:
+- Is the service essential for system operation?
+- Does it increase the attack surface?
+- Can it be disabled without impacting functionality?
 
-Only essential services such as SSH were retained, reducing the system’s attack surface.
+Only essential services such as SSH were retained, significantly reducing the system’s attack surface.
 
 ---
 
 ## 7. Access Control Verification
 
-User access and privilege configuration were reviewed to confirm:
+Access control mechanisms were reviewed to confirm:
 
 - Use of non-root user accounts
-- Controlled administrative access via `sudo`
+- Controlled administrative access using `sudo`
 - Proper group-based permission management
 
-These checks ensure that the principle of **least privilege** is enforced across the system.
+These checks confirm enforcement of the **principle of least privilege**, reducing the risk of accidental or malicious system changes.
 
 ---
 
@@ -137,7 +137,7 @@ The table below summarises the overall security posture of the system:
 | Access control | Restricted |
 | Monitoring | Active |
 
-The system demonstrates a strong layered security model.
+Overall, the system demonstrates a **layered defence model** combining prevention, detection, and verification controls.
 
 ---
 
@@ -147,38 +147,38 @@ The system demonstrates a strong layered security model.
 - Minimal exposed services
 - Effective firewall enforcement
 - Automated security auditing
-- Stable system configuration
+- Stable and consistent configuration
 - Clear separation of user privileges
 
 ### Limitations
-- Monitoring could be extended with alerting tools
-- Performance testing could be expanded further
+- Monitoring could be extended with alerting mechanisms
+- Performance testing could be expanded under additional workloads
 - Hardware resources limit scalability
 
-These limitations highlight opportunities for future enhancement rather than critical weaknesses.
+These limitations represent opportunities for future enhancement rather than critical weaknesses.
 
 ---
 
 ## 10. Key Learning Outcomes
 
-By completing Week 7, the following skills were developed:
+By completing this coursework and the final audit phase, the following skills were developed:
 
-- Conducting structured security audits
-- Interpreting vulnerability scan results
-- Validating firewall and service configurations
-- Evaluating system readiness
-- Applying real-world system administration practices
+- Performing structured security audits
+- Interpreting vulnerability and hardening reports
+- Validating firewall and network security controls
+- Reviewing system services and access control
+- Applying professional system administration practices
 
 ---
 
 ## 11. Final Reflection
 
-Week 7 served as a conclusion to the entire coursework by bringing together **security, performance, monitoring, and access control** concepts.  
-The auditing process reinforced the importance of continuous evaluation and demonstrated how layered security controls work together to protect a system.
+Week 7 concluded the coursework by bringing together **security, performance, monitoring, and access control** concepts.  
+The auditing process reinforced the importance of continuous evaluation and demonstrated how layered security controls work together to protect an operating system.
 
-This final assessment reflects real-world practices in system administration, where validation and review are just as important as initial configuration.
+This final evaluation reflects real-world system administration practices, where validation and review are just as important as initial configuration and deployment.
 
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | Week 7 
+[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | [Week 6](Week6.md) | Week 7
