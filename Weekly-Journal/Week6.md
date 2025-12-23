@@ -3,29 +3,32 @@
 ---
 
 ## 1. Introduction
-Week 6 focused on **evaluating system performance** under both idle and stressed conditions.  
-Rather than only observing raw statistics, this week emphasised **interpretation**, **comparison**, and **understanding operating system behaviour** when system resources are placed under load.
 
-Performance monitoring is essential for identifying bottlenecks, ensuring stability, and planning future optimisation.  
-This week builds upon earlier system configuration and introduces **real-world performance evaluation techniques** used in production environments.
+Week 6 focused on **evaluating operating system performance** under both idle and stressed conditions.  
+Rather than only observing raw statistics, this week emphasised **interpretation, comparison, and analysis** of how system resources behave when workload intensity changes.
+
+Performance monitoring is critical for identifying bottlenecks, ensuring system stability, and supporting informed optimisation decisions.  
+This week builds on earlier system configuration and security hardening by analysing **real-world operating system behaviour** under load.
 
 ---
 
 ## 2. Objectives
+
 The objectives of this week were to:
 
-- Measure system uptime and baseline performance
-- Monitor CPU behaviour during idle and stressed states
-- Analyse memory usage and allocation
-- Evaluate disk I/O performance
+- Establish a baseline performance state
+- Monitor CPU behaviour during idle and stressed conditions
+- Analyse memory usage and allocation patterns
+- Evaluate disk I/O behaviour
 - Test basic network latency and reliability
-- Interpret collected performance data
+- Identify performance bottlenecks
+- Consider optimisation strategies
 
 ---
 
 ## 3. Performance Evaluation Methodology
 
-A structured testing methodology was followed to ensure consistent results:
+A structured testing methodology was followed to ensure consistent and meaningful results:
 
 Baseline measurement (idle system)  
 ↓  
@@ -33,27 +36,26 @@ Apply controlled workload
 ↓  
 Monitor system metrics  
 ↓  
-Capture performance output  
+Capture command-line output  
 ↓  
 Analyse and compare results  
 
-This approach ensures that observed performance changes are **directly linked to applied workloads**.
+This approach ensures that any performance changes observed are **directly linked to the applied workload**, rather than background system activity.
 
 ---
 
 ## 4. System Uptime and Baseline State
 
-Before stress testing, system uptime was checked to confirm stability and normal operation.
+Before stress testing, system uptime was checked to confirm stable operation.
 
-### Screenshot: System uptime
-![Uptime](../Screenshots/Week6/week6_1_uptime.png)
+![System Uptime](../Screenshots/Week6/week6_1_uptime.png)
 
 The output confirms:
-- The system is running normally
+- The system was running continuously
 - No unexpected restarts occurred
-- Load averages are low
+- Load averages were low
 
-This establishes a reliable baseline for further testing.
+This establishes a reliable **baseline state** for further performance testing.
 
 ---
 
@@ -61,94 +63,90 @@ This establishes a reliable baseline for further testing.
 
 CPU usage was monitored while the system was idle using the `top` command.
 
-### Screenshot: CPU idle state
-![Top idle](../Screenshots/Week6/week6_2_top_idle.png)
+![CPU Idle State](../Screenshots/Week6/week6_2_top_idle.png)
 
-**Observations:**
-- CPU usage remained very low
+### Analysis:
+- CPU utilisation remained very low
 - Most CPU time was spent in the idle state
-- No background processes were consuming excessive resources
+- No background processes consumed excessive resources
 
-This indicates efficient CPU utilisation when no workload is applied.
+This indicates efficient CPU scheduling and low overhead when no workload is applied.
 
 ---
 
 ## 6. Stress Tool Installation
 
-The `stress` utility was installed to simulate CPU and memory workload.
+The `stress` utility was installed to simulate controlled CPU and memory workloads.
 
-### Screenshot: Installing stress
-![Install stress](../Screenshots/Week6/week6_3_install_stress.png)
+![Installing stress](../Screenshots/Week6/week6_3_install_stress.png)
 
-Using controlled tools like `stress` allows realistic performance testing without damaging the system.
+Using a dedicated stress tool allows realistic workload testing without risking system damage.
 
 ---
 
 ## 7. CPU Performance – Under Load
 
-CPU stress testing was conducted to observe behaviour under heavy computation.
+A CPU stress test was performed to observe behaviour under high computational demand.
 
-### Screenshot: CPU under stress
-![CPU stress](../Screenshots/Week6/week6_3_cpu_stress_top.png)
+![CPU Under Stress](../Screenshots/Week6/week6_3_cpu_stress_top.png)
 
-**Analysis:**
+### Analysis:
 - CPU utilisation increased significantly
-- Load average rose proportionally
-- System remained responsive and stable
+- Load averages rose proportionally
+- The system remained responsive
 
-This demonstrates that the processor can handle increased workloads without system failure.
+This demonstrates that the operating system can effectively manage CPU scheduling under heavy load without instability.
 
 ---
 
 ## 8. Memory Usage Analysis
 
-Memory usage was monitored in both idle and active conditions.
+Memory usage was monitored during both idle and stressed conditions.
 
-### Screenshot: Memory usage (idle)
-![Memory idle](../Screenshots/Week6/week6_3_memory_idle.png)
+### Idle memory usage:
+![Memory Idle](../Screenshots/Week6/week6_3_memory_idle.png)
 
-### Screenshot: Memory usage (under load)
-![Memory top](../Screenshots/Week6/week6_3_memory_top.png)
+### Memory usage under load:
+![Memory Under Load](../Screenshots/Week6/week6_3_memory_top.png)
 
-**Observations:**
-- Memory usage increased during stress testing
+### Analysis:
+- Memory consumption increased during stress testing
 - No memory exhaustion occurred
 - Swap usage remained minimal
 
-This indicates effective memory management by the operating system.
+This shows that the operating system handled memory allocation efficiently under load.
 
 ---
 
 ## 9. Disk I/O Performance
 
-Disk performance was evaluated by comparing idle and write-intensive states.
+Disk performance was analysed by comparing idle and write-intensive activity.
 
-### Screenshot: Disk idle
-![Disk idle](../Screenshots/Week6/week6_4_disk_idle.png)
+### Disk idle state:
+![Disk Idle](../Screenshots/Week6/week6_4_disk_idle.png)
 
-### Screenshot: Disk write activity
-![Disk IO start](../Screenshots/Week6/week6_4_disk_iostart.png)
+### Disk under load:
+![Disk I/O Activity](../Screenshots/Week6/week6_4_disk_iostart.png)
 
-**Analysis:**
+### Analysis:
 - Disk activity increased significantly during write operations
 - I/O wait time became noticeable
-- Disk I/O had the greatest impact on overall system performance
+- Disk operations had the greatest impact on overall system performance
 
-Disk I/O was identified as a **potential bottleneck** during intensive operations.
+Disk I/O was identified as the **primary performance bottleneck**.
 
 ---
 
 ## 10. Network Performance Testing
 
-Network latency was tested using the `ping` command.
+Network latency and reliability were tested using the `ping` command.
 
-### Screenshot: Network ping test
-![Network ping](../Screenshots/Week6/week6_5_network_ping.png)
+![Network Ping Test](../Screenshots/Week6/week6_5_network_ping.png)
 
-**Results:**
+### Results:
 - Stable connectivity was maintained
-- Minor latency variation observed
-- No packet loss affecting connectivity
+- Minor latency variation was observed
+- No packet loss occurred
 
 This confirms reliable network performance during system load.
 
@@ -158,55 +156,57 @@ This confirms reliable network performance during system load.
 
 | Resource | Idle State | Under Load |
 |--------|-----------|-----------|
-| CPU | Very low usage | High utilisation |
+| CPU | Very low utilisation | High utilisation |
 | Memory | Stable | Increased usage |
 | Disk | Minimal activity | Heavy I/O |
 | Network | Stable | Slight latency |
 
-This comparison clearly shows how workloads affect different system components.
+This comparison highlights how different system components respond to workload pressure.
 
 ---
 
 ## 12. Bottleneck Identification
 
-Based on testing results:
-- **Disk I/O** showed the highest performance impact
-- CPU and memory handled workloads efficiently
-- Network performance remained reliable
+Based on the collected evidence:
+- **Disk I/O** showed the greatest performance impact
+- CPU and memory handled stress effectively
+- Network performance remained stable
 
-Identifying bottlenecks is essential for future optimisation planning.
+Identifying bottlenecks is essential for optimisation planning and capacity management.
 
 ---
 
 ## 13. Optimisation Considerations
 
 Potential optimisation strategies include:
-- Using faster storage (SSD)
-- Disk caching improvements
-- Scheduling heavy tasks during off-peak hours
-- Continuous performance monitoring
+- Using faster storage (e.g. SSD)
+- Improving disk caching strategies
+- Scheduling intensive disk tasks during off-peak periods
+- Ongoing performance monitoring
 
-These measures improve efficiency and reliability in real deployments.
+These approaches improve efficiency and reliability in production environments.
 
 ---
 
 ## 14. Learning Outcomes
+
 This week improved understanding of:
 - Performance monitoring tools
 - Stress testing techniques
-- Resource utilisation analysis
+- Resource utilisation patterns
 - Bottleneck identification
-- System optimisation planning
+- Data-driven optimisation planning
 
 ---
 
 ## 15. Reflection
-Week 6 demonstrated that system performance depends not only on hardware, but also on how resources are managed under load.  
-By combining monitoring tools with analytical interpretation, a deeper understanding of operating system behaviour was achieved.
 
-This week highlighted the importance of **proactive performance analysis** in maintaining stable and efficient systems.
+Week 6 demonstrated that system performance is influenced by how resources are managed under load, not just hardware capability.  
+By combining monitoring tools with structured analysis, deeper insight into operating system behaviour was achieved.
+
+This week reinforced the importance of **proactive performance evaluation** for maintaining stable, efficient systems.
 
 ---
 
 ### 🔗 Navigation
-[Back to Index](INDEX.md) | [Week `](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | Week 6 | [Week 7](Week7.md) 
+[Back to Index](INDEX.md) | [Week 1](Week1.md) | [Week 2](Week2.md) | [Week 3](Week3.md) | [Week 4](Week4.md) | [Week 5](Week5.md) | Week 6 | [Week 7](Week7.md)
