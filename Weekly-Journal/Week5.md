@@ -94,8 +94,6 @@ A basic monitoring script named `monitor-server.sh` was executed to collect syst
 
 This provides a lightweight monitoring foundation for Week 6 performance testing.
 
-*(Add your monitor-server script screenshot here if/when available.)*
-
 ---
 
 ## 8. Security vs Performance Trade-off
